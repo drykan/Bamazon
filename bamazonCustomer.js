@@ -32,7 +32,7 @@ function displayAll() {
             var query = "SELECT * FROM bamazon.products";
             connection.query(query, function(err, res) {
                 for (var i = 0; i < res.length; i++) {
-                  console.log("ID: " + res[i].item_id + " || Product: " + res[i].product_name + " || Price: $" + res[i].price + " || Quantity in Stock: " + res[i].stock_quantity);
+                  console.log("ID: " + res[i].item_id + " | Product: " + res[i].product_name + " | Price: $" + res[i].price + " | Quantity in Stock: " + res[i].stock_quantity);
                 }
             });
             inquirer
@@ -78,7 +78,7 @@ function runSearch() {
         var query = 'SELECT item_id, product_name, price, stock_quantity FROM bamazon.products WHERE ?';
         connection.query(query, {item_id:search}, function(err, res) {
             if (res.length == 0) {
-                console.log('Invalid item');
+                console.log("Item Doesn't exist");
             }
             if (res[0].stock_quantity >= quantity) {
                 console.log(res[0].stock_quantity);
@@ -94,8 +94,8 @@ function runSearch() {
                     }]);
             } else {
                 console.log("Insufficient quantity!");
-                console.log(res[0].stock_quantity);
-                console.log(quantity);
+                console.log("Avail quantity: " + res[0].stock_quantity);
+                console.log("Amount you want: " + quantity);
             }
             displayAll();
         })
