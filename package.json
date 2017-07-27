@@ -1,0 +1,24 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Store Front",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "inquirer": "^1.2.2",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drykan/Bamazon.git"
+  },
+  "author": "Daniel Starks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drykan/Bamazon/issues"
+  },
+  "homepage": "https://github.com/drykan/Bamazon#readme"
+}
